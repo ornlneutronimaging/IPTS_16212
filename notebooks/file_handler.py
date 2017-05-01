@@ -17,7 +17,7 @@ def load_data(file_name):
         _image = np.asarray(hdu.data)
         hdulist.close()
         return _image
-    elif data_type == '.tiff':
+    elif (data_type == '.tiff') or (data_type == '.tif'):
         _image = Image.open(file_name)
         return np.array(_image)
     else:
