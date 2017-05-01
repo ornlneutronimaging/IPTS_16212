@@ -55,7 +55,7 @@ def gui_fname(dir=None, message='', ext='tif'):
 def gui_fimage(dir=None, message=''):
     """Select one or more image via a dialog and returns the file name.
     """
-    _filter = 'TIFF (*.tif);; FITS (*.fits)'
+    _filter = 'TIFF (*.tiff);; TIFF (*.tif);; FITS (*.fits)'
     fname = QFileDialog.getOpenFileNames(None, message,
                                          directory = dir, 
                                          filter = _filter)
