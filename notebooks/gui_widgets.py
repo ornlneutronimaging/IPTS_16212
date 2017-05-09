@@ -11,7 +11,7 @@ import platform
 
 @format_directory
 def gui_dname(dir=None, message=''):
-    """Select files"""
+    """Select folder"""
     if message == '':
         message = 'Select Folder ...'
     dirname = QFileDialog.getExistingDirectory(None, message, 
