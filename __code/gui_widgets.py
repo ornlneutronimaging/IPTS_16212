@@ -5,13 +5,13 @@ except ImportError:
     from PyQt5.QtWidgets import QFileDialog
     from PyQt5 import QtCore, QtGui
 import os
-from decorators import format_directory
+from __code.decorators import format_directory
 import platform
 
 
 @format_directory
 def gui_dname(dir=None, message=''):
-    """Select folder"""
+    """Select files"""
     if message == '':
         message = 'Select Folder ...'
     dirname = QFileDialog.getExistingDirectory(None, message, 
@@ -45,12 +45,8 @@ def gui_fname(dir=None, message='', ext='tif'):
                                          directory = dir, 
                                          filter = _filter)
 
-    if platform.system() == 'Linux':
-        return fname[0]
-    else:
-        return fname
-    
-    
+    return fname
+
 @format_directory
 def gui_fimage(dir=None, message=''):
     """Select one or more image via a dialog and returns the file name.
@@ -60,24 +56,7 @@ def gui_fimage(dir=None, message=''):
                                          directory = dir, 
                                          filter = _filter)
 
-    if platform.system() == 'Linux':
-        return fname[0]
-    else:
-        return fname
-
-@format_directory
-def gui_output_fimage(dir=None, message=''):
-    """Select one image file (tiff)
-    """
-    _filter = 'TIFF (*.tif)'
-    fname = QFileDialog.getSaveFileName(None, message,
-                                         directory = dir, 
-                                         filter = _filter)
-
-    if platform.system() == 'Linux':
-        return fname[0]
-    else:
-        return fname
+    return fname
     
 @format_directory
 def gui_single_file(dir=None):
