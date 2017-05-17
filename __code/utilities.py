@@ -130,7 +130,7 @@ def get_working_dir(ipts=''):
         parser = RawConfigParser()
         parser.read(config_path)
         try:
-            working_dir = parser.get('main_session', 'working_dir')
+            working_dir = parser.get(str(ipts), 'working_dir')
         except:
             working_dir = './'
     else:
